@@ -1,9 +1,10 @@
 import '../styles/App.css';
+import HeaderNav from './HeaderNav';
 
 function App() {
   return (
     <div className="App">
-      <h1>Shipment Tracker</h1>
+      <HeaderNav/>
     </div>
   );
 }
