@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/ShipmentAddress.css'
 
-function ShipmentAddress() {
+function ShipmentAddress(props) {
     return (
         <div className="address__wrapper">
             <div className="address__header">
