@@ -1,7 +1,19 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table'
+import fetchShipment from '../utils/API';
 
-function DetailsTable() {
+function Info() {
+
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         const request = await fetchShipment(trackingNumber);
+    //         console.log(request)
+    //         setRepos(request.data.items);
+    //         setPageNum(pageNum+1)
+    //     }
+    //     fetchData();
+    // }, [])
+
     return (
         <div>
             <h3>Shipment Information</h3>
@@ -47,4 +59,4 @@ function DetailsTable() {
     )
 }
 
-export default DetailsTable
+export default Info

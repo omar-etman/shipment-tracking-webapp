@@ -1,11 +1,11 @@
 import React from 'react'
 
-function IssueReport() {
+function Tracker() {
     return (
         <div>
-            report issue
+            SHIPMENT TRACKER
         </div>
     )
 }
 
-export default IssueReport
+export default Tracker

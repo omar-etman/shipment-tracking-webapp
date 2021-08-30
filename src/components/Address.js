@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/ShipmentAddress.css'
 
-function ShipmentAddress() {
+function Address(props) {
     return (
         <div className="address__wrapper">
             <div className="address__header">
@@ -14,4 +14,4 @@ function ShipmentAddress() {
     )
 }
 
-export default ShipmentAddress
+export default Address
