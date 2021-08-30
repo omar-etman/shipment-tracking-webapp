@@ -18,8 +18,12 @@ function App() {
             <DetailsTable />
           </div>
           <div className="info__details">
-            <ShipmentAddress/>
-            <IssueReport/>
+            <div className="details__address">
+              <ShipmentAddress/>
+            </div>
+            <div className="details__report">
+              <IssueReport/>
+            </div>
           </div>
         </div>
       </div>

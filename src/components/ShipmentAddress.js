@@ -1,9 +1,15 @@
 import React from 'react'
+import '../styles/ShipmentAddress.css'
 
 function ShipmentAddress() {
     return (
-        <div>
-            <h3>ShipmentAddress</h3>
+        <div className="address__wrapper">
+            <div className="address__header">
+                <p>ShipmentAddress</p>
+            </div>
+            <div className="address">
+                <p>addressjfeubjbebfubuebudbubeubbbd</p>
+            </div>
         </div>
     )
 }
