@@ -17,11 +17,15 @@ function App() {
     <div className="App">
 
         <Head
+
           Numbers={trackNums}
         />
 
 
+
         <Main
+
+
           Numbers={trackNums}
         />
 

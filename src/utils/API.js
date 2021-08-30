@@ -1,8 +1,8 @@
 import axios from "axios";
 
-function fetchShipment(trackingNumber) {
+function fetchShipment(trackNum) {
     return(
-        axios.get(`https://tracking.bosta.co/shipments/track/${trackingNumber}`)
+        axios.get(`https://tracking.bosta.co/shipments/track/${trackNum}`)
     )
 }
 

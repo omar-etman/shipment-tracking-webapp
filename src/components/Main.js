@@ -12,14 +12,10 @@ function Main (props) {
 
     return (
         <div className="main__body">
-            <div className="main__body__trackContainer">
-                <Tracker/>
-            </div>
+            <Tracker/>
             <div className ="main__body__info">
                 <div className="info__table">
-                    <Info
-                        Numbers={Numbers}
-                    />
+                    <Info/>
                 </div>
                 <div className="info__details">
                     <div className="details__address">

@@ -1,0 +1,35 @@
+.tracker{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 80%;
+    margin: 1rem;
+    border-radius: 30px;
+    border: 2px dotted turquoise;
+    justify-content: center;
+    align-items: center;
+}
+
+.tracker__header{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px dotted grey;
+    min-height: 100px;
+    width: 100%;
+}
+
+.tracker__header__cell{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;    
+}
+
+.tracker__footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    width: 100%;
+}
