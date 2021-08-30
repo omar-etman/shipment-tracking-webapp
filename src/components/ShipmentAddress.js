@@ -5,7 +5,7 @@ function ShipmentAddress() {
     return (
         <div className="address__wrapper">
             <div className="address__header">
-                <p>ShipmentAddress</p>
+                Shipment Address
             </div>
             <div className="address">
                 <p>addressjfeubjbebfubuebudbubeubbbd</p>
