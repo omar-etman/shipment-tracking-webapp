@@ -1,12 +1,12 @@
 import {useState, useEffect} from 'react'
-import { Navbar, NavDropdown, Nav, Form, FormControl, Button } from 'react-bootstrap';
-import  '../styles/HeaderNav.css';
+import { Navbar, Dropdown, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import  '../styles/Head.css';
 
 function Head(props) {
 
 
 
-    const {Numbers} = props
+    const {Numbers, handleSelect} = props
     // const [trackingNumber, setTrackingNumber] = useState([])
 
     return (
@@ -30,18 +30,24 @@ function Head(props) {
 
             <Navbar bg='light' expand='lg' className="header__navbar">
                 <Nav className='navbar__nav'>
-                <NavDropdown title="Dropdown" id="basic-nav-dropdown" className="navbar__nav__options" >
+                <Dropdown title="Dropdown" id="basic-nav-dropdown" className="navbar__nav__options" >
                     
-                        <NavDropdown.Item href="#action/3.1">
+                        <Dropdown.Item href="#action/3.1">
                             <Form inline>
                                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                                 <Button variant="outline-success">Search</Button>
                             </Form>
-                        </NavDropdown.Item>
-                    </NavDropdown>
-                    <NavDropdown title="Dropdown" id="basic-nav-dropdown" className="navbar__nav__options" >
-                        {Numbers && Numbers.map((Number)=>(<NavDropdown.Item href="#action/3.1">{Number}</NavDropdown.Item>))}
-                    </NavDropdown>
+                        </Dropdown.Item>
+                    </Dropdown>
+                    <Dropdown title="Dropdown" id="basic-nav-dropdown" className="navbar__nav__options" >
+                        {Numbers && Numbers.map((Number)=>(
+                            <Dropdown.Item
+                                eventKey={Number}  
+                                onSelect={handleSelect}
+                            >
+                                {Number}
+                            </Dropdown.Item>))}
+                    </Dropdown>
                 </Nav>
                 <Navbar.Brand href="#home" className ="navbar__logo">en</Navbar.Brand>
             </Navbar>

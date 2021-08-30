@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/Tracker.css'
+import TrackingBar from './TrackingBar'
 
 function Tracker() {
     return (
@@ -24,7 +25,7 @@ function Tracker() {
                 </div>
                 <div className='tracker__footer'>
                     <div className ='tracker__footer__bar'>
-                        <p>-----------------------------</p>
+                        <TrackingBar/>
                     </div>
                 </div>
         </div>

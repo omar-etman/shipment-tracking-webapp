@@ -6,10 +6,24 @@ import fetchShipment from '../utils/API';
 
 function App() {
 
-  const trackingNums = ['6636234', '7234258', '9442984','1094442'] 
-  const [trackNums, setTrackNum] = useState('')
+  const Nums = ['6636234', '7234258', '9442984','1094442'] 
+  const [trackNum, setTrackNum] = useState('')
+  const [shipment, setShipment] = useState([])
 
+  useEffect(() => {
+    async function fetchData() {
+        const request = await fetchShipment(trackNum);
+        console.log(request)
+        setShipment(request.data);
+        debugger
+    }
+    fetchData();
+}, [trackNum])
 
+  
+  const handleSelect = (e) => {
+    setTrackNum(e)
+  }
   
   //
   
@@ -17,16 +31,11 @@ function App() {
     <div className="App">
 
         <Head
-
-          Numbers={trackNums}
+          Numbers={Nums}
+          handleSelect={handleSelect}
         />
-
-
-
         <Main
-
-
-          Numbers={trackNums}
+          shipment={shipment}
         />
 
     </div>
