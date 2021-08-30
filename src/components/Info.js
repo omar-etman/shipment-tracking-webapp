@@ -1,18 +1,15 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table'
-import fetchShipment from '../utils/API';
+import Moment from 'react-moment'
 
-function Info() {
+function Info(props) {
 
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         const request = await fetchShipment(trackingNumber);
-    //         console.log(request)
-    //         setRepos(request.data.items);
-    //         setPageNum(pageNum+1)
-    //     }
-    //     fetchData();
-    // }, [])
+    const {steps} = props
+    const ignoredSteps = [
+        "IN_TRANSIT",
+        "NOT_YET_SHIPPED",
+        "WAITING_FOR_CUSTOMER_ACTION"
+    ]
 
     return (
         <div>
@@ -22,37 +19,24 @@ function Info() {
             >
                 <thead>
                     <tr>
-                        <th width="140">Branch</th>
-                        <th width="140">Date</th>
-                        <th width="140">Time</th>
-                        <th width="170">Details</th>
+                        <th width="140">الفرع</th>
+                        <th width="140">اليوم</th>
+                        <th width="140">الوقت</th>
+                        <th width="170">التفاصيل</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Rakesh</td>
-                        <td>1123</td>
-                        <td>CSE</td>
-                        <td>Mumbai</td>
-                    </tr>
-                    <tr>
-                        <td>Jackson</td>
-                        <td>1124</td>
-                        <td>ECE</td>
-                        <td>Hyderabad</td>
-                    </tr>
-                    <tr>
-                        <td>Keshav</td>
-                        <td>1124</td>
-                        <td>CSE</td>
-                        <td>Chennai</td>
-                    </tr>
-                    <tr>
-                        <td>Neilesh Jain</td>
-                        <td>1125</td>
-                        <td>EEE</td>
-                        <td>Gwalior</td>
-                    </tr>
+                    
+                    {steps && steps.map(step => (
+                        ignoredSteps.indexOf(step.state) < 0 &&
+                        <tr>
+                            <td>{step.hub || "-"}</td>
+                            <td><Moment format="YYYY/MM/DD">{step.timestamp}</Moment></td>
+                            <td><Moment format="hh:mm:ss">{step.timestamp}</Moment></td>
+                            <td>{step.state}</td>
+                        </tr>
+                    ))}
+
                 </tbody>
             </Table>
         </div>

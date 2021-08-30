@@ -8,18 +8,24 @@ import '../styles/Main.css';
 
 function Main (props) {
 
-    const {Numbers} = props
+    const {shipment} = props
 
     return (
         <div className="main__body">
-            <Tracker/>
+            <Tracker
+                trackingNumber={shipment.TrackingNumber}
+                steps={shipment.TransitEvents}
+            />
             <div className ="main__body__info">
                 <div className="info__table">
-                    <Info/>
+                    <Info
+                        steps={shipment.TransitEvents}                      
+                    />
                 </div>
                 <div className="info__details">
                     <div className="details__address">
-                    <Address/>
+                    <Address
+                    />
                     </div>
                     <div className="details__report">
                     <Report/>
