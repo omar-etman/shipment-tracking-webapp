@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/Tracker.css'
 import TrackingBar from './TrackingBar'
 import Moment from 'react-moment'
-import { textFormat } from '../utils/textFormat'
+import { dictionary } from '../utils/dictionary'
 function Tracker(props) {
 
     const {trackNum, steps, status, lastUpdate, deliveryDate} = props
@@ -11,7 +11,7 @@ function Tracker(props) {
                 <div className='tracker__header'>
                     <div className='tracker__header__cell1'>
                         <p>Shipment Number:{trackNum}</p>
-                        <div className='header__cell__status'>{status ? textFormat[status.state] : "state" }</div>
+                        <div className='header__cell__status'>{status ? dictionary[status.state] : "state" }</div>
                     </div>
                     <div className='tracker__header__cell2'>
                         <p>last update</p>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { Navbar, NavDropdown, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import  '../styles/Head.css';
 
@@ -6,22 +6,22 @@ function Head(props) {
 
     const {Numbers, handleSelect} = props
 
-    const [show, handleShow] = useState(false);
+    // const [show, handleShow] = useState(false);
 
-    useEffect(() => {
-        window.addEventListener("scroll", () =>{
-            if(window.scrollY > 100) {
-                handleShow(true);
-            } else handleShow(false)
-        })
-        return () => {
-            window.removeEventListener("scroll")
-        }
-    }, [])
+    // useEffect(() => {
+    //     window.addEventListener("scroll", () =>{
+    //         if(window.scrollY > 100) {
+    //             handleShow(true);
+    //         } else handleShow(false)
+    //     })
+    //     return () => {
+    //         window.removeEventListener("scroll")
+    //     }
+    // }, [])
 
 
     return (
-        <div className={`header ${show && "header__white"}`}>
+        <div className='header'>
             <Navbar bg='light' expand='lg' className="header__navbar">
                 <Navbar.Brand href="#home" className ="navbar__logo">
                     <img

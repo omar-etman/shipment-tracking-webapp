@@ -2,6 +2,7 @@ import React from 'react'
 import Table from 'react-bootstrap/Table'
 import Moment from 'react-moment'
 import { dictionary } from '../utils/dictionary'
+import '../styles/Info.css'
 
 function Info(props) {
 
@@ -15,7 +16,7 @@ function Info(props) {
     ]
 
     return (
-        <div>
+        <div className="info__table">
             <h3>Shipment Information</h3>
             <Table 
                 striped bordered hover size="sm"  

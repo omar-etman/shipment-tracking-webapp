@@ -25,13 +25,7 @@ function Main (props) {
                     />
                 </div>
                 <div className="info__details">
-                    <div className="details__address">
-                    <Address
-                    />
-                    </div>
-                    <div className="details__report">
                     <Report/>
-                    </div>
                 </div>
             </div>
             

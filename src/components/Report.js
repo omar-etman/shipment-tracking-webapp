@@ -1,9 +1,11 @@
 import React from 'react'
+import '../styles/Report.css'
 
 function Report() {
     return (
-        <div>
-            report issue
+        <div className='report'>
+            <p>هل توجد مشكلة ؟</p>
+            <button >Report</button>
         </div>
     )
 }

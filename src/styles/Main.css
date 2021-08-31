@@ -4,7 +4,6 @@
     justify-content: center;
     align-items: center;
     margin-top: 71px;
-    border: 2px solid blue;
   }
 
 .main__body__info {
@@ -13,14 +12,7 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    border: 2px solid red;
     
-  }
-  
-  .info__table {
-    border: 2px solid green;
-    margin: 2rem;
-    border-radius: 30px;
   }
   
   .info__details{
@@ -28,16 +20,8 @@
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid yellow;
     margin: 2rem 0;
     padding: 0;
-    height: 263px;
+    min-width: 277px;
   }
   
-  .details__address , .details__report{
-    display: flex;
-    margin: 2rem 0;
-    border: 2px solid turquoise;
-    width: 100%;
-    border-radius: 30px;
-  }
