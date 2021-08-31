@@ -1,12 +1,29 @@
-import React from 'react';
+import {useState, useEffect} from 'react';
 import Info from './Info';
 import Report from './Report';
 import Tracker from './Tracker';
 import '../styles/Main.css';
+import fetchShipment from '../utils/API';
+import { useParams } from 'react-router-dom';
 
 function Details (props) {
 
-    const {shipment, trackNum} = props
+    const trackNum = props.match.params.id 
+    
+    const [shipment, setShipment] = useState([])
+    
+    
+    useEffect(() => {
+        async function fetchData() {
+            
+            const request = await fetchShipment(trackNum);
+            console.log(trackNum)
+            setShipment(request.data);
+        }
+        fetchData();
+
+    }, [trackNum])
+
 
     return (
         <div className="main__body">

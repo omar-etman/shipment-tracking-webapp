@@ -1,24 +1,17 @@
 // import { useState, useEffect } from 'react';
 import { Navbar, NavDropdown, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import  '../styles/Head.css';
+import {Redirect, useHistory} from 'react-router-dom'
 
 function Head(props) {
 
     const {Numbers, handleSelect} = props
 
-    // const [show, handleShow] = useState(false);
+    const handleTracking = (e) => {
 
-    // useEffect(() => {
-    //     window.addEventListener("scroll", () =>{
-    //         if(window.scrollY > 100) {
-    //             handleShow(true);
-    //         } else handleShow(false)
-    //     })
-    //     return () => {
-    //         window.removeEventListener("scroll")
-    //     }
-    // }, [])
-
+        handleSelect(e)
+        return <Redirect to='/track/{e}'/>
+    }
 
     return (
         <div className='header'>
@@ -52,9 +45,10 @@ function Head(props) {
                     </NavDropdown>
                     <NavDropdown title="Dropdown" id="basic-nav-dropdown" className="navbar__nav__options" >
                         {Numbers && Numbers.map((Number)=>(
-                            <NavDropdown.Item
-                                eventKey={Number}  
-                                onSelect={handleSelect}
+                            <NavDropdown.Item  
+                                onSelect={(e)=>handleTracking(e)}
+                                key={Number}
+                                href={`/${Number}`}
                             >
                                 {Number}
                             </NavDropdown.Item>))}
