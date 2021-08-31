@@ -17,7 +17,7 @@ function Tracker(props) {
                         <p>last update</p>
                         <p>
                             <Moment format="YYYY/MM/DD">{lastUpdate}</Moment>
-                             <span>at</span>
+                             <br/><span>at</span><br/>
                             <Moment format="hh:mm">{lastUpdate}</Moment>
                         </p>
                     </div>

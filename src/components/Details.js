@@ -1,11 +1,10 @@
 import React from 'react';
 import Info from './Info';
 import Report from './Report';
-import Address from './Address';
 import Tracker from './Tracker';
 import '../styles/Main.css';
 
-function Main (props) {
+function Details (props) {
 
     const {shipment, trackNum} = props
 
@@ -33,4 +32,4 @@ function Main (props) {
     )
 }
 
-export default Main
+export default Details

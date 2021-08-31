@@ -1,8 +1,8 @@
 .tracker{
     display: flex;
     flex-flow: column nowrap;
-    width: 80%;
-    margin: 1rem;
+    width: 90%;
+    margin: 50px;
     border-radius: 30px;
     border: 2px dotted turquoise;
     justify-content: center;
@@ -32,5 +32,9 @@
     justify-content: center;
     align-items: center;
     min-height: 100px;
+    width: 100%;
+}
+
+.tracker__footer__bar{
     width: 100%;
 }

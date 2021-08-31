@@ -1,12 +1,29 @@
 import React from 'react'
 import { ProgressBar, Step } from "react-step-progress-bar";
+import '../styles/ProgressBar.css'
 function TrackingBar(props) {
     
-  const {steps} = props
+  // const {steps} = props
+
+  // const steps = [
+  //   {
+  //     status: "created"
+  //   },
+  //   {
+  //     status: "pendingApproval"
+  //   },
+  //   {
+  //     status: "approved"
+  //   },
+   
+  //   {
+  //     status: "complete"
+  //   }
+  // ];
   
-  const transfer = {
-    status: "approved" // change transfer status to progress bar
-  };
+  // const transfer = {
+  //   status: "approved" // change transfer status to progress bar
+  // };
 
 
   // const getStepPosition = (transferStatus) => {
@@ -47,7 +64,23 @@ function TrackingBar(props) {
           })}
         </ProgressBar>
       </div> */}
-      <div>---------------------------------------------</div>
+      {/* <div className="container">
+        <ul className="progressbar">
+          <li className="active">Step 1</li>
+          <li className="active">Step 2 </li>
+          <li className="active">Step 3</li>
+          <li>Step 4</li>
+        </ul>
+      </div> */}
+
+      <div className="container">
+        <ul className="progressbar">
+          <li className="active">Start</li>
+          <li className="active">First Step</li>
+          <li className="active">Middle Stage</li>
+          <li>Finish</li>
+        </ul>
+      </div>
     </>
   );
 }

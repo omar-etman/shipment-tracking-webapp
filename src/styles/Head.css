@@ -29,6 +29,11 @@
 
 .navbar__nav {
     display: flex;
+    margin: 0;
+}
+
+.navbar__nav , .navbar__nav1{
+    display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
 }

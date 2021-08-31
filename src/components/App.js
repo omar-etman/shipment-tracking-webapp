@@ -1,8 +1,10 @@
 import '../styles/App.css';
 import { useState, useEffect } from 'react';
 import Head from './Head';
-import Main from './Main';
+import Details from './Details';
 import fetchShipment from '../utils/API';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import HomePage from './HomePage';
 
 function App() {
 
@@ -27,16 +29,25 @@ function App() {
   
   return (
     <div className="App">
-        <Head
-          Numbers={Nums}
-          handleSelect={handleSelect}
-        />
-        <Main
-          shipment={shipment}
-          trackNum={trackNum}
-        />
+        
+        <Router>
+          <Head
+            Numbers={Nums}
+            handleSelect={handleSelect}
+          />
+          <Switch>
+            <Route exact path='/' component={HomePage}/>
+            <Route path= '/track/:id'>
+              <Details
+                shipment={shipment}
+                trackNum={trackNum}
+              />
+            </Route>
+          </Switch>
+
+        </Router>
     </div>
   );
 }
 
-export default App;
+export default App
