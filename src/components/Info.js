@@ -1,6 +1,7 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table'
 import Moment from 'react-moment'
+import { dictionary } from '../utils/dictionary'
 
 function Info(props) {
 
@@ -8,7 +9,9 @@ function Info(props) {
     const ignoredSteps = [
         "IN_TRANSIT",
         "NOT_YET_SHIPPED",
-        "WAITING_FOR_CUSTOMER_ACTION"
+        "WAITING_FOR_CUSTOMER_ACTION",
+        "OUT_FOR_DELIVERY",
+        "RECEIVED_DELIVERY_LOCATION"
     ]
 
     return (
@@ -33,7 +36,7 @@ function Info(props) {
                             <td>{step.hub || "-"}</td>
                             <td><Moment format="YYYY/MM/DD">{step.timestamp}</Moment></td>
                             <td><Moment format="hh:mm:ss">{step.timestamp}</Moment></td>
-                            <td>{step.state}</td>
+                            <td>{dictionary[step.state] || step.state}</td>
                         </tr>
                     ))}
 
