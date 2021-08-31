@@ -1,12 +1,13 @@
 import React from 'react'
 import { ProgressBar, Step } from "react-step-progress-bar";
-function TrackingBar() {
+function TrackingBar(props) {
     
-
+  const {steps} = props
   
   const transfer = {
     status: "approved" // change transfer status to progress bar
   };
+
 
   // const getStepPosition = (transferStatus) => {
   //   return steps.findIndex(({ status }) => status === transferStatus) + 1;

@@ -12,6 +12,10 @@
     transition: all 0.5s;
 }
 
+.header__white{
+    background-color: white;
+}
+
 .header__navbar {
     display: flex;
     align-items: center;
