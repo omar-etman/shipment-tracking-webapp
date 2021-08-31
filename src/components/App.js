@@ -25,19 +25,16 @@ function App() {
     setTrackNum(e)
   }
   
-  //
-  
   return (
     <div className="App">
-
         <Head
           Numbers={Nums}
           handleSelect={handleSelect}
         />
         <Main
           shipment={shipment}
+          trackNum={trackNum}
         />
-
     </div>
   );
 }

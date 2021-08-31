@@ -3,31 +3,18 @@ import { ProgressBar, Step } from "react-step-progress-bar";
 function TrackingBar() {
     
 
-  const steps = [
-    {
-        status: "created"
-    },
-    {
-        status: "cancelled"
-    },
-    {
-        status: "approved"
-    },
-    {
-        status: "complete"
-    }
-  ];
+  
   const transfer = {
     status: "approved" // change transfer status to progress bar
   };
 
-  const getStepPosition = (transferStatus) => {
-    return steps.findIndex(({ status }) => status === transferStatus) + 1;
-  };
+  // const getStepPosition = (transferStatus) => {
+  //   return steps.findIndex(({ status }) => status === transferStatus) + 1;
+  // };
 
   return (
     <>
-      <div style={{ margin: 50 }}>
+      {/* <div style={{ margin: 50 }}>
         <ProgressBar
           width={750}
           percent={100 * (getStepPosition(transfer.status) / steps.length)}
@@ -58,7 +45,8 @@ function TrackingBar() {
             );
           })}
         </ProgressBar>
-      </div>
+      </div> */}
+      <div>---------------------------------------------</div>
     </>
   );
 }

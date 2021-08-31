@@ -3,18 +3,20 @@ import Info from './Info';
 import Report from './Report';
 import Address from './Address';
 import Tracker from './Tracker';
-import fetchShipment from '../utils/API';
 import '../styles/Main.css';
 
 function Main (props) {
 
-    const {shipment} = props
+    const {shipment, trackNum} = props
 
     return (
         <div className="main__body">
             <Tracker
-                trackingNumber={shipment.TrackingNumber}
+                trackNum={trackNum}
                 steps={shipment.TransitEvents}
+                status={shipment.CurrentStatus}
+                lastUpdate={shipment.timestamp}
+                deliveryDate={shipment.PromisedDate}
             />
             <div className ="main__body__info">
                 <div className="info__table">

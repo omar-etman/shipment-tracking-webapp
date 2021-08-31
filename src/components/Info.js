@@ -22,10 +22,10 @@ function Info(props) {
             >
                 <thead>
                     <tr>
-                        <th width="140">الفرع</th>
-                        <th width="140">اليوم</th>
-                        <th width="140">الوقت</th>
-                        <th width="170">التفاصيل</th>
+                        <th width="100">الفرع</th>
+                        <th width="100">اليوم</th>
+                        <th width="100">الوقت</th>
+                        <th width="140">التفاصيل</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +36,7 @@ function Info(props) {
                             <td>{step.hub || "-"}</td>
                             <td><Moment format="YYYY/MM/DD">{step.timestamp}</Moment></td>
                             <td><Moment format="hh:mm:ss">{step.timestamp}</Moment></td>
-                            <td>{dictionary[step.state] || step.state}</td>
+                            <td>{dictionary[step.state]}</td>
                         </tr>
                     ))}
 

@@ -1,13 +1,9 @@
-import {useState, useEffect} from 'react'
 import { Navbar, NavDropdown, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import  '../styles/Head.css';
 
 function Head(props) {
 
-
-
     const {Numbers, handleSelect} = props
-    // const [trackingNumber, setTrackingNumber] = useState([])
 
     return (
         <div className="header">
