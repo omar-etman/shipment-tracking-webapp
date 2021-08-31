@@ -5,7 +5,7 @@ function Report() {
     return (
         <div className='report'>
             <p>هل توجد مشكلة ؟</p>
-            <button >Report</button>
+            <button href="https://bosta.co/" >Report</button>
         </div>
     )
 }

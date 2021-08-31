@@ -7,15 +7,9 @@
     top: 0;
     width: 100%;
     height: 60px;
-    /* z-index: 0.2;
-    transition-timing-function: ease-in;
-    transition: all 0.1s; */
     background-color: white;
 }
 
-/* .header__white{
-    
-} */
 
 .header__navbar {
     display: flex;
@@ -41,4 +35,25 @@
 .navbar__nav__options {
     display: flex;
     padding: 2rem;
+    flex-direction: column;
 }
+
+.dropdown-menu.show {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropdown-item {
+    color: red;
+    padding: 0.5rem;
+}
+
+.nav-link, .nav-link:visited, .nav-link:hover {
+    color: red;
+}
+
+
+
+
+

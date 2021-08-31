@@ -1,14 +1,16 @@
 .container {
     width: 100%;
+    
 }
 
 .progressbar {
     counter-reset: step;
+    
 }
 
 .progressbar li {
     list-style-type: none;
-    float: left;
+    float: right;
     width: 25%;
     position: relative;
     text-align: center;
@@ -39,7 +41,7 @@
     z-index: -1;
 }
 
-.progressbar li:first-child::after {
+.progressbar li:last-child::after {
     content: none;
 
 }
@@ -52,7 +54,26 @@
     border-color: green;
 }
 
-.progressbar i.active+ li:after {
+.progressbar li.active::after {
     background-color: green;
 }
+
+.progressbar li.error {
+    color: red;
+}
+
+.progressbar li.error:before {
+    border-color: red;
+}
+
+.progressbar li.error::after {
+    background-color: red;
+}
+
+.error__text {
+    color: red;
+    font-size: 0.8rem;
+}
+
+
 

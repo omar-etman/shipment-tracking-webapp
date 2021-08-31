@@ -1,88 +1,70 @@
 import React from 'react'
-import { ProgressBar, Step } from "react-step-progress-bar";
 import '../styles/ProgressBar.css'
 function TrackingBar(props) {
     
-  // const {steps} = props
+  const stages = {
+    TICKET_CREATED:"تم انشاء الشحنة",
+    PACKAGE_RECEIVED:"تم استلام الشحنة من التاجر",
+    OUT_FOR_DELIVERY:"الشحنة خرجت للتسليم",
+    DELIVERED:"تم التسليم",
+    
+  }
 
-  // const steps = [
-  //   {
-  //     status: "created"
-  //   },
-  //   {
-  //     status: "pendingApproval"
-  //   },
-  //   {
-  //     status: "approved"
-  //   },
-   
-  //   {
-  //     status: "complete"
-  //   }
-  // ];
+  const cancelledStages = {
+    TICKET_CREATED:"تم انشاء الشحنة",
+    PACKAGE_RECEIVED:"تم استلام الشحنة من التاجر",
+    DELIVERED_TO_SENDER:"تم الغاء الشحنة من التاجر",
+    // OUT_FOR_DELIVERY:"الشحنة خرجت للتسليم",
+    
+  }
   
-  // const transfer = {
-  //   status: "approved" // change transfer status to progress bar
-  // };
+  let {steps} = props
 
+  steps = steps && Object.keys(steps).map(key => steps[key].state)
 
-  // const getStepPosition = (transferStatus) => {
-  //   return steps.findIndex(({ status }) => status === transferStatus) + 1;
-  // };
+  const successfulDelivery = steps && steps.length && steps[steps.length -1] !==  'DELIVERED_TO_SENDER'
 
   return (
-    <>
-      {/* <div style={{ margin: 50 }}>
-        <ProgressBar
-          width={750}
-          percent={100 * (getStepPosition(transfer.status) / steps.length)}
-          filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
-        >
-          {steps.map((step, index, arr) => {
-            return (
-              <Step
-                position={100 * (index / arr.length)}
-                transition="scale"
-                children={({ accomplished }) => (
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: "50%",
-                      width: 20,
-                      height: 20,
-                      color: "white",
-                      backgroundColor: accomplished ? "green" : "gray"
-                    }}
-                  >
-                    {index + 1}
-                  </div>
-                )}
-              />
-            );
-          })}
-        </ProgressBar>
-      </div> */}
-      {/* <div className="container">
+    <div className="container">
+      { successfulDelivery ? 
         <ul className="progressbar">
-          <li className="active">Step 1</li>
-          <li className="active">Step 2 </li>
-          <li className="active">Step 3</li>
-          <li>Step 4</li>
-        </ul>
-      </div> */}
+        {steps && steps.length && Object.keys(stages).map((stage) => (
+          <li
+            className={steps.indexOf(stage) >= 0 ? 'active' : ''}
+            key={stage}
+          >
+              {stages[stage]}
+            </li>
+        ))}
+      </ul>
+      :
+      <ul className="progressbar">
+        {steps && steps.length && Object.keys(cancelledStages).map((stage) => (
+          <li
+            className={steps.indexOf(stage) >= 0 && stage !== 'DELIVERED_TO_SENDER' ? 'error' : ''}
+            key={stage}
+          >
+              {stage === 'DELIVERED_TO_SENDER' ? (<div>
+                <div>
+                    الشحنة خرجت للتسليم 
+                </div>
+                <div className="error__text">
+                  {cancelledStages[stage]}
+                </div>
+              
+              </div>)
+              
+              :
+                cancelledStages[stage]
+               }
+            </li>
 
-      <div className="container">
-        <ul className="progressbar">
-          <li className="active">Start</li>
-          <li className="active">First Step</li>
-          <li className="active">Middle Stage</li>
-          <li>Finish</li>
-        </ul>
-      </div>
-    </>
+        ))}
+        <li>تم التسليم</li>
+      </ul>}
+    </div>
   );
 }
 
 export default TrackingBar
+

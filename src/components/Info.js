@@ -17,7 +17,7 @@ function Info(props) {
 
     return (
         <div className="info__table">
-            <h3>Shipment Information</h3>
+            <h3>تفاصيل الشحنة</h3>
             <Table 
                 striped bordered hover size="sm"  
             >

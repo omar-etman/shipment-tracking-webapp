@@ -26,24 +26,15 @@ function Head(props) {
                     />
                 </Navbar.Brand>
                 <Nav className='navbar__nav'>
-                    <Nav.Link href="#home" className="navbar__nav__options">Home</Nav.Link>
-                    <Nav.Link href="#link" className="navbar__nav__options">Link</Nav.Link>
-                    <Nav.Link href="#link" className="navbar__nav__options">other</Nav.Link>
+                    <Nav.Link href="#home" className="navbar__nav__options">الصفحة الرئيسية</Nav.Link>
+                    <Nav.Link href="#link" className="navbar__nav__options">الأسعار</Nav.Link>
+                    <Nav.Link href="#link" className="navbar__nav__options">المبيعات</Nav.Link>
                 </Nav>
             </Navbar>
 
             <Navbar bg='light' expand='lg' className="header__navbar">
                 <Nav className='navbar__nav'>
-                <NavDropdown title="Dropdown" id="basic-nav-dropdown" className="navbar__nav__options" >
-                    
-                        <NavDropdown.Item href="#action/3.1">
-                            <Form inline>
-                                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                                <Button variant="outline-success">Search</Button>
-                            </Form>
-                        </NavDropdown.Item>
-                    </NavDropdown>
-                    <NavDropdown title="Dropdown" id="basic-nav-dropdown" className="navbar__nav__options" >
+                    <NavDropdown title="تتبع شحنتك" id="basic-nav-dropdown" className="navbar__nav__options" >
                         {Numbers && Numbers.map((Number)=>(
                             <NavDropdown.Item  
                                 onSelect={(e)=>handleTracking(e)}
@@ -54,7 +45,6 @@ function Head(props) {
                             </NavDropdown.Item>))}
                     </NavDropdown>
                 </Nav>
-                <Navbar.Brand href="#home" className ="navbar__logo">en</Navbar.Brand>
             </Navbar>
         </div>
     )
